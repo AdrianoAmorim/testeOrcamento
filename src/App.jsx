@@ -1,10 +1,7 @@
 
 
-import { PDFDownloadLink, PDFViewer, pdf } from '@react-pdf/renderer';
+import { PDFDownloadLink} from '@react-pdf/renderer';
 import DocumentPDF from './components/DocumentPDF';
-import html2canvas from 'html2canvas';
-import { useRef, useState } from 'react';
-import { WhatsappShareButton } from 'react-share';
 
 
 function App() {
