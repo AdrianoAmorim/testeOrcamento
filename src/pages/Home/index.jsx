@@ -1,8 +1,8 @@
-import IconNewOrc from "../../assets/img/icons/iconNewOrc";
 import Button from "../../components/Button";
 
 import LogoApp from "../../assets/img/logoApp.png"
 import { useNavigate } from "react-router-dom";
+import IconNewOrc from "../../assets/img/icons/iconNewOrc";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -14,6 +14,7 @@ const Home = () => {
 
             <Button width="icon" onClick={()=> navigate("/new-report")}>
                 Novo Orçamento
+
                 <IconNewOrc width="38px" height="38px" className="text-white" />
             </Button>
 
