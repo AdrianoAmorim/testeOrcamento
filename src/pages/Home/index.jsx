@@ -7,7 +7,7 @@ import IconNewOrc from "../../assets/img/icons/iconNewOrc";
 const Home = () => {
     const navigate = useNavigate();
     return (
-        <div className=" w-full h-full max-h-[500px] rounded-[8px] p-2 flex flex-col items-center justify-between  bg-transparent-[.5] bg-slate-300 ">
+        <div className=" w-full h-screen rounded-[8px] p-2 flex flex-col items-center justify-between  bg-transparent-[.5] bg-slate-300 ">
             <div className="w-full max-w-[280px] flex items-center">
                 LOGO MARCA DA EMPRESA
             </div>
