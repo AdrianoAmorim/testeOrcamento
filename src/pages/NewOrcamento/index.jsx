@@ -5,16 +5,19 @@ import Button from "../../components/Button";
 import ButtonPdf from "../../components/ButtonPdf";
 import Input from "../../components/Input";
 import LabelInput from "../../components/LabelInput";
+import IconReturn from "../../assets/img/icons/iconReturn";
 
 const NewOrcamento = () => {
-    const navigate =useNavigate();
+    const navigate = useNavigate();
 
     return (
         <div className=" w-full  p-3 rounded-[8px] flex flex-col items-center bg-slate-200">
-            <div className="flex items-center justify-between w-full mb-9 pb-3 border-b-2 border-gray-400">
-               <span className="font-bold text-[28px]  text-gray-800 ">Novo Orçamento</span>
-               <span onClick={()=>{navigate("/")}} className="font-bold text-[32px] text-blue-900 bg-blue-300 mr-2 px-3 pb-2 rounded-full leading-8">&lt;</span> 
-            </div>
+            <div className="flex items-center justify-between w-full mb-9 pb-1 border-b-2 border-gray-400">
+                <span className="font-bold text-[28px]  text-gray-800 ">Novo Orçamento</span>
+                <Button width="no-bg" onClick={()=>{navigate("/")}}>
+                    <IconReturn width="48px" height="48px" color="#135781" bgColor="#47a9e6" />
+                </Button>
+                </div>
 
             <div className="w-full flex flex-col items-start p-2 mb-8 border-2 border-purple-300 rounded">
                 <span className="text-gray-600 text-[22px] bg-slate-200 -mt-6 mb-6 font-semibold ">Dados Clientes</span>
@@ -61,7 +64,7 @@ const NewOrcamento = () => {
                         <Input id="vlUnitario" width="md" />
                     </div>
                     <Button width="no-bg">
-                        <IconAddProd width="48px" height="48px" color="#135781"  bgColor="#47a9e6"/>
+                        <IconAddProd width="48px" height="48px" color="#135781" bgColor="#47a9e6" />
                     </Button>
                 </div>
             </div>

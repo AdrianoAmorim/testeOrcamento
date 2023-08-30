@@ -8,7 +8,7 @@ import IconNewOrc from "../../assets/img/icons/iconNewOrc";
 const Home = () => {
     const navigate = useNavigate();
     return (
-        <div className=" w-full  rounded-[8px] overflow-hidden flex flex-col items-center justify-between bg-slate-200 ">
+        <div className=" w-full rounded-[8px] overflow-hidden flex flex-col items-center justify-between bg-slate-200 ">
             <div className="w-full flex items-center mb-24">
                <img className="object-cover" src={LogoEmpresa} alt="logo Empresa" />
             </div>
