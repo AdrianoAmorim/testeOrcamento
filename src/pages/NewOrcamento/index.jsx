@@ -55,8 +55,8 @@ const NewOrcamento = () => {
                     <Input id="produto" />
                 </div>
                 <div className="flex flex-col w-full gap-2 mb-8">
-                    <LabelInput to="produto">Descrição</LabelInput>
-                    <Input id="produto" />
+                    <LabelInput to="descricaoProd">Descrição</LabelInput>
+                    <Input id="descricaoProd" />
                 </div>
                 <div className="flex items-center justify-between w-full">
                     <div className="flex flex-col w-full gap-2 mb-8">
