@@ -1,6 +1,6 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import DocumentPDF from "./DocumentPDF";
-import IconDownloadPdf from "../assets/img/icons/iconDownloadPdf";
+import IconDownloadPdf from "../assets/img/icons/IconDownloadPdf";
 
 const ButtonPdf = ()=>{
     return(
