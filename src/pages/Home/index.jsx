@@ -14,7 +14,6 @@ const Home = () => {
             </div>
 
             <Button width="icon" onClick={()=> navigate("/new-report")}>
-                Novo Orçamento
                 <IconNewOrc width="38px" height="38px" className="text-white" />
             </Button>
 
