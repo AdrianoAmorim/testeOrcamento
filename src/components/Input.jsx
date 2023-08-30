@@ -1,9 +1,17 @@
+import { clsx } from "clsx";
 
 // eslint-disable-next-line react/prop-types
-const Input = ({type, onChange, value,id})=>{
+const Input = ({type, onChange, value,id,width})=>{
     return(
       <input type={type} value={value} onChange={onChange}  id={id}
-      className="bg-purple-500 h-9 outline-none ps-3 font-semibold text-[18px] text-white rounded"/>
+      className={clsx(
+        "bg-slate-400 h-9 outline-none ps-3 text-[16px] text-black rounded",{
+          "w-20": width == "sm",
+          "w-32": width == "md",
+          "w-48": width == "lg",
+          "w-full": width == "full",
+        }
+      )}/>
     )
 }
 

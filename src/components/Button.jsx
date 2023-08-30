@@ -9,6 +9,7 @@ const Button = ({children,width, onClick})=>{
             "w-42 h-42": width == "md",
             "w-full h-38": width == "lg",
             "flex flex-col items-center gap-2": width == "icon",
+            "flex flex-col items-center bg-transparent shadow-none outline-none": width == "no-bg",
         }
       )} onClick={onClick}>
         {children}
