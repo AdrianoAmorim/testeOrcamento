@@ -19,7 +19,7 @@ const NewOrcamento = () => {
                 </Button>
                 </div>
 
-            <div className="w-full flex flex-col items-start p-2 mb-8 border-2 border-purple-300 rounded">
+            <div className="w-full flex flex-col items-start p-2 mb-8 border-2 border-blue-400 rounded">
                 <span className="text-gray-600 text-[22px] bg-slate-200 -mt-6 mb-6 font-semibold ">Dados Clientes</span>
 
                 <div className="flex flex-col w-full gap-2 mb-8">
