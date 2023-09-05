@@ -5,13 +5,22 @@ import styles from './styled';
 const DocumentPDF = () => {
     return (
         
-        <Document>
+        <Document style={{width:"100%",height:"100%"}}>
             <Page size="A4" style={styles.page}>
                 <View style={styles.section}>
                     <Image style={styles.imgLogo} src={Logo} />
                     <Text>
                         Nome da Empresa
                     </Text>
+                </View>
+                <View style={styles.body}>
+                    <Text> asdasd asd asdasd a</Text>
+                    <Text> asdasd asd asdasd a</Text>
+                    <Text> asdasd asd asdasd a</Text>
+                    <Text> asdasd asd asdasd a</Text>
+                    <Text> asdasd asd asdasd a</Text>
+                    <Text> asdasd asd asdasd a</Text>
+                    <Text> asdasd asd asdasd a</Text>
                 </View>
             </Page>
         </Document>

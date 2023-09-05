@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     page: {
       flexDirection: 'column',
       width: '100%',
+      height:'100%',
       backgroundColor: '#E4E4E4'
     },
     section: {
@@ -19,6 +20,10 @@ const styles = StyleSheet.create({
       height:100,
       objectFit:'cover'
 
+    },
+    body:{
+      width:"100%",
+      height:"100%"
     }
   });
 
