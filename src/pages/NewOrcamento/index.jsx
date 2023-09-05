@@ -17,10 +17,17 @@ const NewOrcamento = () => {
         vl: 0
 
     });
+    const [cliente,setCliente] = useState({
+        nome: "",
+        cpf: "",
+        tel: "",
+        endereco:"",
+        cidade:""
+    })
 
     useEffect(() => {
-        console.log(produto)
-    }, [produto])
+        console.log(cliente)
+    }, [cliente])
 
     return (
         <div className=" w-full h-full p-3 rounded-[8px] flex flex-col items-center bg-slate-200">
@@ -36,23 +43,38 @@ const NewOrcamento = () => {
 
                 <div className="flex flex-col w-full gap-2 mb-8">
                     <LabelInput to="nomeCliente">Nome </LabelInput>
-                    <Input id="nomeCliente" width="full" />
+                    <Input id="nomeCliente" width="full" value={cliente.nome}
+                     onChange={(e) => {
+                        setCliente({ ...cliente, nome: e.target.value })
+                    }}/>
                 </div>
                 <div className="flex flex-col w-full gap-2 mb-8">
                     <LabelInput to="cpfCliente">CPF</LabelInput>
-                    <Input id="cpfCliente" width="lg" />
+                    <Input id="cpfCliente" width="lg" value={cliente.cpf}
+                     onChange={(e) => {
+                        setCliente({ ...cliente, cpf: e.target.value })
+                    }}/>
                 </div>
                 <div className="flex flex-col w-full gap-2 mb-8">
                     <LabelInput to="telCliente">Telefone</LabelInput>
-                    <Input id="telCliente" width="lg" />
+                    <Input id="telCliente" width="lg" value={cliente.tel}
+                     onChange={(e) => {
+                        setCliente({ ...cliente, tel: e.target.value })
+                    }}/>
                 </div>
                 <div className="flex flex-col w-full gap-2 mb-8">
                     <LabelInput to="endereçoCliente">Endereço</LabelInput>
-                    <Input id="endereçoCliente" width="full" />
+                    <Input id="endereçoCliente" width="full" value={cliente.endereco}
+                     onChange={(e) => {
+                        setCliente({ ...cliente, endereco: e.target.value })
+                    }}/>
                 </div>
                 <div className="flex flex-col w-full gap-2 mb-8">
                     <LabelInput to="cidadeCliente">Cidade</LabelInput>
-                    <Input id="cidadeCliente" width="full" />
+                    <Input id="cidadeCliente" width="full" value={cliente.cidade}
+                     onChange={(e) => {
+                        setCliente({ ...cliente, cidade: e.target.value })
+                    }}/>
                 </div>
             </div>
             <div className="w-full flex flex-col items-start p-2 border-2 border-blue-400 rounded">
