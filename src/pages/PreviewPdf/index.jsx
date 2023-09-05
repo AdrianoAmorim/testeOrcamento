@@ -7,7 +7,7 @@ const PreviewPdf = () => {
     return (
 
         <div className='w-full h-full'>
-            <PDFViewer style={{ height: "100%" }} width="100%" showToolbar>
+            <PDFViewer showToolbar width={"100%"} height={1000}>
                 <DocumentPDF />
             </PDFViewer>
         </div>
