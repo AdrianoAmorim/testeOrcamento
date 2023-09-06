@@ -29,23 +29,23 @@ const DocumentPDF = () => {
 
                     <View style={styles.boxDadosCliente}>
                         <View style={styles.itemDadosCliente}>
-                            <Text style={styles.titleDadosCliente}>Cliente:</Text>
+                            <Text style={styles.titleDadosCliente}>CLIENTE:</Text>
                             <Text style={styles.textDadosCliente}>Adriano da Silva Amorim</Text>
                         </View>
                         <View style={styles.itemDadosCliente}>
-                            <Text style={styles.titleDadosCliente}>Cpf:</Text>
+                            <Text style={styles.titleDadosCliente}>CPF:</Text>
                             <Text style={styles.textDadosCliente}>058.058.058-55</Text>
                         </View>
                         <View style={styles.itemDadosCliente}>
-                            <Text style={styles.titleDadosCliente}>Tel:</Text>
+                            <Text style={styles.titleDadosCliente}>TEL:</Text>
                             <Text style={styles.textDadosCliente}>(28) 99949-8478</Text>
                         </View>
                         <View style={styles.itemDadosCliente}>
-                            <Text style={styles.titleDadosCliente}>Endereço:</Text>
+                            <Text style={styles.titleDadosCliente}>ENDEREÇO:</Text>
                             <Text style={styles.textDadosCliente}>Rua Joaquim Grechi - nº12 - Vila rica </Text>
                         </View>
                         <View style={styles.itemDadosCliente}>
-                            <Text style={styles.titleDadosCliente}>Cidade:</Text>
+                            <Text style={styles.titleDadosCliente}>CIDADE:</Text>
                             <Text style={styles.textDadosCliente}>Cachoeiro de Itapemirim - ES </Text>
                         </View>
                     </View>
