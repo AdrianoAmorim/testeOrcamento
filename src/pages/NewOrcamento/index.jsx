@@ -7,6 +7,7 @@ import Input from "../../components/Input";
 import LabelInput from "../../components/LabelInput";
 import IconReturn from "../../assets/img/icons/iconReturn";
 import { useEffect, useState } from "react";
+import InputMoney from "../../components/InputMoney";
 
 const NewOrcamento = () => {
     const navigate = useNavigate();
@@ -50,16 +51,16 @@ const NewOrcamento = () => {
                 </div>
                 <div className="flex flex-col w-full gap-2 mb-8">
                     <LabelInput to="cpfCliente">CPF</LabelInput>
-                    <Input id="cpfCliente" width="lg" value={cliente.cpf}
+                    <Input mask="999.999.999-99" id="cpfCliente" width="lg" value={cliente.cpf}
                      onChange={(e) => {
-                        setCliente({ ...cliente, cpf: e.target.value })
+                        setCliente({ ...cliente, cpf: e.target.value.replace(/\D/g, "") })
                     }}/>
                 </div>
                 <div className="flex flex-col w-full gap-2 mb-8">
                     <LabelInput to="telCliente">Telefone</LabelInput>
-                    <Input id="telCliente" width="lg" value={cliente.tel}
+                    <Input mask="(99) 99999-9999" id="telCliente" width="lg" value={cliente.tel}
                      onChange={(e) => {
-                        setCliente({ ...cliente, tel: e.target.value })
+                        setCliente({ ...cliente, tel: e.target.value.replace(/\D/g, "") })
                     }}/>
                 </div>
                 <div className="flex flex-col w-full gap-2 mb-8">
@@ -82,7 +83,7 @@ const NewOrcamento = () => {
 
                 <div className="flex flex-col w-full gap-2 mb-8">
                     <LabelInput to="qtdProduto">Qtd </LabelInput>
-                    <Input id="qtdProduto" width="sm" value={produto.qtd}
+                    <Input mask="999999" id="qtdProduto" width="sm" value={produto.qtd}
                         onChange={(e) => {
                             const novoVl = e.target.value.trim();
                             setProduto({ ...produto, qtd: novoVl === "" ? 0 : parseInt(e.target.value) })
@@ -106,10 +107,10 @@ const NewOrcamento = () => {
                 <div className="flex items-center justify-between w-full">
                     <div className="flex flex-col w-full gap-2 mb-8">
                         <LabelInput to="vlUnitario">Vl Unitário</LabelInput>
-                        <Input id="vlUnitario" width="md" value={produto.vl}
+                        <InputMoney id="vlUnitario" value={produto.vl}
                          onChange={(e) => {
-                            const novoVl = e.target.value.trim();
-                            setProduto({ ...produto, vl: novoVl === "" ? 0 : parseInt(e.target.value)})
+                           
+                            setProduto({ ...produto, vl: e.target.value.replace(/\D/g, "") === null ? 0 : parseFloat(e.target.value.replace(/\D/g, ""))})
                         }} />
                     </div>
                     <Button width="no-bg">
