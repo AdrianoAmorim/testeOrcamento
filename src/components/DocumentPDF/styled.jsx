@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
     boxEnderecoEmpresa:{
       flexDirection:'column',
       alignItems:"center",
-      padding: 10
+      padding: 10,
+      gap:5
     },
     enderecoEmpresa:{
       fontSize:14,

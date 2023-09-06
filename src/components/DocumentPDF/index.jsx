@@ -5,7 +5,7 @@ import styles from './styled';
 const DocumentPDF = () => {
     return (
 
-        <Document style={{ width: "100%", height: "100%" }}>
+        <Document>
             <Page size="A4" style={styles.page}>
                 <View style={styles.header}>
                     <View style={styles.boxLogoEmpresa}>
