@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
     page: {
       flexDirection: 'column',
       width: '100%',
-      height:'100%',
       backgroundColor: '#E4E4E4'
     },
     header: {
@@ -59,7 +58,6 @@ const styles = StyleSheet.create({
     body:{
       flexDirection:"column",
       width:"100%",
-      height:"100%",
       padding:10
     },
     boxHeaderBody:{
@@ -116,6 +114,27 @@ const styles = StyleSheet.create({
     textListaProduto:{
       fontSize:12 ,
       width:"100%" 
+    },
+    footer:{
+      flexDirection:"column",
+      width:"100%",
+      padding:10
+    },
+    boxTextFooter:{
+      flexDirection:"row",
+      alignItems:"center",
+      gap:10,
+      paddingVertical:10
+    },
+    textTitleFooter:{
+      fontSize:14,
+
+    },
+    descFooter:{
+      color:"red"
+    },
+    textFooter:{
+      fontSize:12
     }
   });
 

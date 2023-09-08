@@ -26,7 +26,7 @@ const DocumentPDF = () => {
 
 
                 <View style={styles.body}>
-
+                    <Text style={{ textAlign: "center", marginBottom: 10 }}>ORÇAMENTO</Text>
                     <View style={styles.boxDadosCliente}>
                         <View style={styles.itemDadosCliente}>
                             <Text style={styles.titleDadosCliente}>CLIENTE:</Text>
@@ -94,6 +94,26 @@ const DocumentPDF = () => {
                         <Text style={styles.textListaProduto}>
                             R$ 300,00
                         </Text>
+                    </View>
+                </View>
+
+            <View style={{width:"100%", borderTopWidth:2,borderTopColor:"#515458",marginVertical:10}}></View>
+                <View style={styles.footer}>
+                    <View style={styles.boxTextFooter}>
+                        <Text style={styles.textTitleFooter}>Pagamento:</Text>
+                        <Text style={styles.textFooter}>Cartão Credito</Text>
+                    </View >
+                    <View style={styles.boxTextFooter}>
+                        <Text style={styles.textTitleFooter}>Parcelamento:</Text>
+                        <Text style={styles.textFooter}>5x</Text>
+                    </View>
+                    <View style={styles.boxTextFooter}>
+                        <Text style={styles.textTitleFooter}>Desconto:</Text>
+                        <Text style={[styles.textFooter,styles.descFooter]}>R$ 20,00</Text>
+                    </View>
+                    <View style={[styles.boxTextFooter,{justifyContent:"flex-end"}]}>
+                        <Text style={styles.textTitleFooter}>TOTAL:</Text>
+                        <Text style={styles.textFooter}>R$ 2.000,00</Text>
                     </View>
                 </View>
             </Page>
