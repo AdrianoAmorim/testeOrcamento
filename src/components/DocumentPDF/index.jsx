@@ -97,7 +97,7 @@ const DocumentPDF = () => {
                     </View>
                 </View>
 
-            <View style={{width:"100%", borderTopWidth:2,borderTopColor:"#515458",marginVertical:10}}></View>
+                <View style={{ width: "100%", borderTopWidth: 2, borderTopColor: "#8b8c8d", marginTop: 20 }}></View>
                 <View style={styles.footer}>
                     <View style={styles.boxTextFooter}>
                         <Text style={styles.textTitleFooter}>Pagamento:</Text>
@@ -109,9 +109,9 @@ const DocumentPDF = () => {
                     </View>
                     <View style={styles.boxTextFooter}>
                         <Text style={styles.textTitleFooter}>Desconto:</Text>
-                        <Text style={[styles.textFooter,styles.descFooter]}>R$ 20,00</Text>
+                        <Text style={[styles.textFooter, styles.descFooter]}>R$ 20,00</Text>
                     </View>
-                    <View style={[styles.boxTextFooter,{justifyContent:"flex-end"}]}>
+                    <View style={[styles.boxTextFooter, { justifyContent: "flex-end" }]}>
                         <Text style={styles.textTitleFooter}>TOTAL:</Text>
                         <Text style={styles.textFooter}>R$ 2.000,00</Text>
                     </View>

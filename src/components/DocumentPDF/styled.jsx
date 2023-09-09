@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
       padding:10,
       borderWidth: 2,
       borderRadius:10,
-      borderColor:'#32363a'
+      borderColor:'#8b8c8d'
     },
     textHeader:{
       flexDirection:'column',
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
       paddingVertical:5,
       textAlign:"center",
       borderBottomWidth:1,
-      borderBottomColor: "#32363a"
+      borderBottomColor: "#8b8c8d"
     },
     boxEnderecoEmpresa:{
       flexDirection:'column',
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
       flexDirection:"column",
       width:"100%",
       borderWidth:1,
-      borderColor:"#000",
+      borderColor:"#8b8c8d",
       borderRadius:10,
       padding:10
     },
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
       paddingVertical:5,
       gap:10,
       borderBottomWidth:1,
-      borderColor:"#000"
+      borderColor:"#acaaaa"
     },
     textListaProduto:{
       fontSize:12 ,
@@ -118,13 +118,14 @@ const styles = StyleSheet.create({
     footer:{
       flexDirection:"column",
       width:"100%",
-      padding:10
+      paddingHorizontal:10,
+      marginTop:10,
+      gap:10,
     },
     boxTextFooter:{
       flexDirection:"row",
       alignItems:"center",
-      gap:10,
-      paddingVertical:10
+      gap:10
     },
     textTitleFooter:{
       fontSize:14,
