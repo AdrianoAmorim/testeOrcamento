@@ -9,7 +9,7 @@ const Home = () => {
     const navigate = useNavigate();
     return (
         <div className=" w-full rounded-[8px] overflow-hidden flex flex-col items-center justify-between bg-slate-200 ">
-            <div className="w-full flex items-center mb-24">
+            <div className="w-full flex items-center mb-16">
                <img className="object-cover" src={LogoEmpresa} alt="logo Empresa" />
             </div>
 
@@ -18,7 +18,7 @@ const Home = () => {
             </Button>
 
 
-            <div className="w-full max-w-[180px] flex items-center mt-36 mb-12">
+            <div className="w-full max-w-[180px] flex items-center mt-16 mb-12">
                 <img className="w-full object-cover" src={LogoApp} alt="Logo App" />
             </div>
 
