@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Page, Text, View, Document, Image } from '@react-pdf/renderer'
-import Logo from '../../assets/img/logo.png'
+import Logo from '../../assets/img/logo-empresa.jpeg'
 import styles from './styled';
 import { useEffect } from 'react';
 
