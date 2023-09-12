@@ -36,13 +36,13 @@ const styles = StyleSheet.create({
       gap:5
     },
     enderecoEmpresa:{
-      fontSize:14,
+      fontSize:12,
       color: "#4a4a4b"
     },
     telefoneEmpresa:{
       fontSize:14,
       color:"#3059d7",
-      marginTop:10
+      marginTop:5
     
     },
     boxLogoEmpresa:{
@@ -104,12 +104,8 @@ const styles = StyleSheet.create({
     },
 
     boxListaProduto:{
-      flexDirection:"row",
-      justifyContent:"space-between",
-      paddingVertical:5,
-      gap:10,
-      borderBottomWidth:1,
-      borderColor:"#acaaaa"
+      flexDirection:"column",
+      width:"100%",
     },
     textListaProduto:{
       fontSize:12 ,

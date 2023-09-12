@@ -13,7 +13,7 @@ import Select from "../../components/Select";
 const NewOrcamento = () => {
     const navigate = useNavigate();
     const [produto, setProduto] = useState({
-        qtd: 0,
+        qtd: "",
         nome: "",
         desc: "",
         vl: ""
@@ -30,8 +30,9 @@ const NewOrcamento = () => {
         pgm: "",
         parcelamento: "",
         desconto: "",
-        total: 0,
+        total: "",
     })
+    const [listProduto,setListProduto] = useState([])
 
 
     //CRIA UMA MASCARA MONETÁRIA
@@ -46,19 +47,31 @@ const NewOrcamento = () => {
 
         // Garante que há apenas um ponto decimal
         const parts = inputValue.split('.');
-
-        console.log(parts.length)
         if (parts.length >= 2) {
-            console.log(parts[1]);
             if (parts[1].length > 2) {
                 parts[1] = parts[1].slice(0, 2);
             }
+
             inputValue = `${parts[0]}.${parts[1]}`;
         }
         setState({
             ...state,
             [campo]: inputValue
         })
+    }
+    const clearInputsProduto = ()=>{
+        setProduto({
+            qtd: "",
+            nome: "",
+            desc: "",
+            vl: ""
+    
+        })
+    }
+    //ADICIONA O PRODUTO NA LISTA
+    const addProd = (prod)=>{
+        setListProduto(prevState =>([...prevState,prod]));
+        clearInputsProduto();
     }
 
     return (
@@ -83,16 +96,16 @@ const NewOrcamento = () => {
                 </div>
                 <div className="flex flex-col w-full gap-2 mb-8">
                     <LabelInput to="cpfCliente">CPF</LabelInput>
-                    <Input mask="999.999.999-99" id="cpfCliente" width="lg" value={cliente.cpf}
+                    <Input mask="999.999.999-99" maskPlaceholder=" " id="cpfCliente" width="lg" value={cliente.cpf}
                         onChange={(e) => {
-                            setCliente({ ...cliente, cpf: e.target.value.replace(/\D/g, "") })
+                            setCliente({ ...cliente, cpf: e.target.value })
                         }} />
                 </div>
                 <div className="flex flex-col w-full gap-2 mb-8">
                     <LabelInput to="telCliente">Telefone</LabelInput>
-                    <Input mask="(99) 99999-9999" id="telCliente" width="lg" value={cliente.tel}
+                    <Input mask="(99) 99999-9999" maskPlaceholder=" " id="telCliente" width="lg" value={cliente.tel}
                         onChange={(e) => {
-                            setCliente({ ...cliente, tel: e.target.value.replace(/\D/g, "") })
+                            setCliente({ ...cliente, tel: e.target.value })
                         }} />
                 </div>
                 <div className="flex flex-col w-full gap-2 mb-8">
@@ -117,10 +130,9 @@ const NewOrcamento = () => {
 
                 <div className="flex flex-col w-full gap-2 mb-8">
                     <LabelInput to="qtdProduto">Qtd </LabelInput>
-                    <Input mask="999999" id="qtdProduto" width="sm" value={produto.qtd}
+                    <Input mask="999999" maskPlaceholder=" " id="qtdProduto" width="sm" value={produto.qtd}
                         onChange={(e) => {
-                            const novoVl = e.target.value.trim();
-                            setProduto({ ...produto, qtd: novoVl === "" ? 0 : parseInt(e.target.value) })
+                            setProduto({ ...produto, qtd: e.target.value.trim() })
                         }} />
                 </div>
                 <div className="flex flex-col w-full gap-2 mb-8">
@@ -143,11 +155,10 @@ const NewOrcamento = () => {
                         <LabelInput to="vlUnitario">Vl Unitário</LabelInput>
                         <InputMoney id="vlUnitario" value={`R$ ${produto.vl}`}
                             onChange={(e) => {
-
                                 maskMonetario(e, produto, setProduto, "vl")
                             }} />
                     </div>
-                    <Button width="no-bg">
+                    <Button width="no-bg" onClick={()=> addProd(produto)}>
                         <IconAddProd width="48px" height="48px" color="#135781" bgColor="#47a9e6" />
                     </Button>
                 </div>
@@ -163,10 +174,10 @@ const NewOrcamento = () => {
                         onChange={(e) => {
                             setPagamento({ ...pagamento, pgm: e.target.value })
                         }}>
-                        <option value="avista">Á Vista</option>
-                        <option value="cred">C. Crédito</option>
-                        <option value="deb">C. Débito</option>
-                        <option value="pix">PIX</option>
+                        <option value="Á Vista">Á Vista</option>
+                        <option value="Credito">C. Crédito</option>
+                        <option value="Debito">C. Débito</option>
+                        <option value="Pix">PIX</option>
                     </Select>
                 </div>
                 <div className="flex flex-col w-full gap-2 mb-8">
@@ -196,7 +207,7 @@ const NewOrcamento = () => {
 
 
             <div className="mt-12">
-                <ButtonPdf />
+                <ButtonPdf dataCliente={cliente} dataProduto={listProduto} dataPagamento={pagamento} />
             </div>
         </div>
 
