@@ -2,13 +2,9 @@
 import { Page, Text, View, Document, Image } from '@react-pdf/renderer'
 import Logo from '../../assets/img/logo-empresa.jpeg'
 import styles from './styled';
-import { useEffect } from 'react';
 
 
-const DocumentPDF = ({ dataCl, dataProd, dataPag }) => {
-    useEffect(() => {
-        console.log(dataProd)
-    }, [dataProd])
+const DocumentPDF = ({ dataCl, dataProd, dataPag}) => {
     return (
 
         <Document>
@@ -91,7 +87,7 @@ const DocumentPDF = ({ dataCl, dataProd, dataPag }) => {
                                         {prod.desc}
                                     </Text>
                                     <Text style={styles.textListaProduto}>
-                                        {prod.vl}
+                                        R$ {prod.vl}
                                     </Text>
                                 </View>
                             ))
@@ -112,12 +108,20 @@ const DocumentPDF = ({ dataCl, dataProd, dataPag }) => {
                         <Text style={styles.textFooter}>{dataPag.parcelamento}</Text>
                     </View>
                     <View style={styles.boxTextFooter}>
+                        <Text style={styles.textTitleFooter}>Entrada:</Text>
+                        <Text style={[styles.textFooter]}> R$ {dataPag.entrada}</Text>
+                    </View>
+                    <View style={styles.boxTextFooter}>
                         <Text style={styles.textTitleFooter}>Desconto:</Text>
-                        <Text style={[styles.textFooter, styles.descFooter]}>{dataPag.desconto}</Text>
+                        <Text style={[styles.textFooter, styles.descFooter]}>R$ {dataPag.desconto}</Text>
+                    </View>
+                    <View style={styles.boxTextFooter}>
+                        <Text style={styles.textTitleFooter}>Observação:</Text>
+                        <Text style={[styles.textFooter]}>{dataPag.obs}</Text>
                     </View>
                     <View style={[styles.boxTextFooter, { justifyContent: "flex-end" }]}>
                         <Text style={styles.textTitleFooter}>TOTAL:</Text>
-                        <Text style={styles.textFooter}>{dataPag.total}</Text>
+                        <Text style={styles.textFooter}>R$ {dataPag.total}</Text>
                     </View>
                 </View>
             </Page>

@@ -1,3 +1,4 @@
+/* eslint-disable no-const-assign */
 
 import { useNavigate } from "react-router-dom";
 import IconAddProd from "../../assets/img/icons/iconAddProd";
@@ -28,11 +29,13 @@ const NewOrcamento = () => {
     })
     const [pagamento, setPagamento] = useState({
         pgm: "",
+        obs: "",
         parcelamento: "",
+        entrada: "",
         desconto: "",
-        total: "",
+        total: 0,
     })
-    const [listProduto,setListProduto] = useState([])
+    const [listProduto, setListProduto] = useState([])
 
 
     //CRIA UMA MASCARA MONETÁRIA
@@ -59,20 +62,46 @@ const NewOrcamento = () => {
             [campo]: inputValue
         })
     }
-    const clearInputsProduto = ()=>{
+    const clearInputsProduto = () => {
         setProduto({
             qtd: "",
             nome: "",
             desc: "",
             vl: ""
-    
+
         })
     }
     //ADICIONA O PRODUTO NA LISTA
-    const addProd = (prod)=>{
-        setListProduto(prevState =>([...prevState,prod]));
+    const addProd = (prod) => {
+        const valorProd = parseFloat(prod.vl.trim());
+
+        prod.vl = parseFloat(valorProd).toFixed(2);
+        setListProduto((prevState) => [...prevState, prod]);
+        getValueTotalOrcamento(prod);
         clearInputsProduto();
     }
+
+    //CALCULA O VALOR TOTAL DO ORÇAMENTO (VALOR A PRAZO)
+    const getValueTotalOrcamento = (prod) => {
+        const vlProd = parseFloat(prod.vl);
+        const vlTotal = parseFloat(pagamento.total);
+
+        const total = vlTotal + vlProd;
+        setPagamento({ ...pagamento, total: total.toFixed(2) });
+    }
+    //aplica o desconto
+    const applyDesconto = (pagamento) => {
+            const total = parseFloat(pagamento.total);
+            console.log(total)
+            console.log(pagamento.desconto);
+
+        if (total > 0) {
+            const totalDesconto = total - parseFloat(pagamento.desconto);
+    
+                console.log(totalDesconto)
+        }
+    }
+
 
     return (
         <div className=" w-full h-full p-3 rounded-[8px] flex flex-col items-center bg-slate-200">
@@ -158,7 +187,7 @@ const NewOrcamento = () => {
                                 maskMonetario(e, produto, setProduto, "vl")
                             }} />
                     </div>
-                    <Button width="no-bg" onClick={()=> addProd(produto)}>
+                    <Button width="no-bg" onClick={() => addProd(produto)}>
                         <IconAddProd width="48px" height="48px" color="#135781" bgColor="#47a9e6" />
                     </Button>
                 </div>
@@ -197,11 +226,27 @@ const NewOrcamento = () => {
                     </Select>
                 </div>
                 <div className="flex flex-col w-full gap-2 mb-8">
+                    <LabelInput to="entradaPagamento">Entrada</LabelInput>
+                    <InputMoney id="entradaPagamento" width="md" value={`R$ ${pagamento.entrada}`}
+                        onChange={(e) => {
+                            maskMonetario(e, pagamento, setPagamento, "entrada")
+                        }} />
+                </div>
+                <div className="flex flex-col w-full gap-2 mb-8">
                     <LabelInput to="descontoPagamento">Desconto</LabelInput>
                     <InputMoney id="descontoPagamento" width="md" value={`R$ ${pagamento.desconto}`}
                         onChange={(e) => {
-                            maskMonetario(e, pagamento, setPagamento, "desconto")
+                            maskMonetario(e, pagamento, setPagamento, "desconto");
+                            applyDesconto(pagamento);
                         }} />
+                </div>
+                <div className="flex flex-col w-full gap-2 mb-8">
+                    <LabelInput to="obsPagamento">Observações</LabelInput>
+                    <Input id="obsPagamento" value={pagamento.obs}
+                        onChange={(e) => {
+                            setPagamento({ ...pagamento, obs: e.target.value })
+                        }}
+                    />
                 </div>
             </div>
 
